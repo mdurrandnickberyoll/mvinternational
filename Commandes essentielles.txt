@@ -1,0 +1,58 @@
+--Commandes essentielles
+
+création projet laravel
+
+    -> laravel new prier24congo
+
+installation du module d'authentification
+    lien https://laravel.com/docs/10.x/starter-kits
+    -> composer require laravel/breeze --dev
+    -> php artisan breeze:install
+ 
+    -> php artisan migrate
+    -> npm install
+
+démarrage du projet laravel
+    -> php artisan serve
+    -> php artisan serve --port=x
+
+installation de livewire
+composer require livewire/livewire
+
+php artisan make:livewire counter
+
+création du model, controller ressource, de la migration et de la factory pour l'activité 
+
+->php artisan make:model Activite -fmcr
+
+//chargement des données de test dans la base
+
+composer dumpautoload //à exécuter une seule fois
+
+php artisan tinker
+Activite::factory()->count(10)->create();
+
+insert into  enrolements(operateur_id,beneficiaire_id,activite_id,dateEnrolement) 
+values (1,1,1,CURDATE())
+
+php artisan make:migration update_table_name --table=nom_de_la_table
+
+
+//créer un composant livewire counter == nom du composant
+
+php artisan make:livewire counter
+
+
+php artisan make:migration update_table_name --table=nom_de_la_table
+
+public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('email')->after('name');
+    });
+}
+
+php artisan migrate
+
+
+php artisan migrate --path=/database/migrations/2023_06_21_123456_create_products_table.php
